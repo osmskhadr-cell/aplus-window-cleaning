@@ -87,3 +87,11 @@ Form checks (`scratchpad/audit/wizard-test.mjs`, `star-test.mjs`): Formspree int
 - **Blog JSON-LD `image` paths** (`/assets/blog-cost.jpg`, `/assets/blog-hardwater.jpg`, `/assets/blog-seasonal.jpg`) now sit on the Vercel host as instructed, but those files do not exist in the repo (the posts hot-link Unsplash). Held for a later wave with AP-33.
 - **Unsplash hot-linked blog images** (AP-33) unchanged.
 - **apluswindowcleaning.com**: domain ownership unconfirmed; canonical/OG stay on the Vercel host until it is.
+
+### 2026-10-06 — merge approval and payload proof
+- Omar reviewed the preview and approved merging everything on `fix/wave1-p0`, including the held items (temporary canonical, form error state, star rating).
+- Payload proof before merge: the Formspree request captured on `main` and on the branch with the network mocked (nothing left the machine) is byte-identical for the home quote wizard, the contact quote wizard and the review form: same method, endpoint, `Accept`, content type, field order and values (multipart boundary normalised).
+
+### Wave 2 backlog added by Omar (P1)
+- Self-host the two font stylesheets (Fraunces from Google Fonts, Cabinet Grotesk from Fontshare) with preload.
+- Home mobile LCP under 2.5 s on official PSI.
