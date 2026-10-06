@@ -234,11 +234,11 @@ DATA-TYPE values:
   Homeowner → data-type="client"
   Business → data-type="client"
   Collaborator → data-type="collaborator"
-════════════════════════════════════
--->
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" id="reviews-grid">
-
+REVIEW CARD TEMPLATE (copy everything between the
+dashed lines, paste it inside #reviews-grid BEFORE
+the first review-placeholder card, then fill it in):
+- - - - - - - - - - - - - - - - - - -
       <div class="review-card bg-white rounded-2xl shadow-md p-6 border border-gray-100"
            data-type="client">
         <div class="flex gap-1 text-yellow-400 text-lg mb-3">★★★★★</div>
@@ -250,6 +250,12 @@ DATA-TYPE values:
           <p class="text-sm text-gray-500">Homeowner · Minneapolis, MN</p>
         </div>
       </div>
+- - - - - - - - - - - - - - - - - - -
+════════════════════════════════════
+-->
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" id="reviews-grid">
+
       <div class="review-card review-placeholder bg-white rounded-2xl shadow-md p-7 border-2 border-dashed border-sky opacity-60" data-type="client">
         <div class="stars text-yellow-400 text-lg mb-3">★★★★★</div>
         <blockquote class="text-gray-700 leading-relaxed mb-4 italic">"Your review could be here. We're collecting our first testimonials from real clients and collaborators."</blockquote>
