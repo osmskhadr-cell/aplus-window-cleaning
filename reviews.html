@@ -80,6 +80,7 @@ save into /assets/ folder with exact filenames below:
   .star-select:hover { transform: scale(1.1); }
   .star-select.filled { color: #4A9EFF; }
   .star-select.empty { color: #E2E8F0; }
+  .star-radio:focus-visible + .star-select { outline: 2px solid #4A9EFF; outline-offset: 2px; border-radius: 0.5rem; }
 
   /* Mobile menu */
   .mobile-menu-closed { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
@@ -343,18 +344,22 @@ the first review-placeholder card, then fill it in):
         </div>
 
         <!-- Row 4: Star Rating -->
-        <div class="mb-5">
-          <label class="block text-sm font-medium text-navy mb-2">Your Rating<span class="text-red-500">*</span></label>
-          <div class="flex flex-wrap items-center gap-1 text-4xl" id="star-rating">
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="1">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="2">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="3">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="4">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="5">★</span>
-            <span class="ml-3 text-sm text-text-muted self-center" id="rating-label">Click to rate</span>
+        <fieldset class="mb-5" id="star-rating">
+          <legend class="block text-sm font-medium text-navy mb-2">Your Rating<span class="text-red-500">*</span></legend>
+          <div class="flex flex-wrap items-center gap-1 text-4xl">
+            <input type="radio" name="rating" value="1" id="rating-1" class="sr-only star-radio" required />
+            <label for="rating-1" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="1"><span aria-hidden="true">★</span><span class="sr-only">1 star</span></label>
+            <input type="radio" name="rating" value="2" id="rating-2" class="sr-only star-radio" required />
+            <label for="rating-2" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="2"><span aria-hidden="true">★</span><span class="sr-only">2 stars</span></label>
+            <input type="radio" name="rating" value="3" id="rating-3" class="sr-only star-radio" required />
+            <label for="rating-3" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="3"><span aria-hidden="true">★</span><span class="sr-only">3 stars</span></label>
+            <input type="radio" name="rating" value="4" id="rating-4" class="sr-only star-radio" required />
+            <label for="rating-4" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="4"><span aria-hidden="true">★</span><span class="sr-only">4 stars</span></label>
+            <input type="radio" name="rating" value="5" id="rating-5" class="sr-only star-radio" required />
+            <label for="rating-5" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="5"><span aria-hidden="true">★</span><span class="sr-only">5 stars</span></label>
+            <span class="ml-3 text-sm text-text-muted self-center" id="rating-label" aria-live="polite">Click to rate</span>
           </div>
-          <input type="hidden" name="rating" id="rating-input" required value="" />
-        </div>
+        </fieldset>
 
         <!-- Row 5: Review Text -->
         <div class="mb-5">
@@ -597,26 +602,27 @@ the first review-placeholder card, then fill it in):
   });
 
   // ─── Star rating ───
+  // Five real radio inputs (name="rating", values 1-5) styled as stars; keyboard and screen readers work natively.
   const stars = document.querySelectorAll('#star-rating .star-select');
-  const ratingInput = document.getElementById('rating-input');
+  const ratingRadios = document.querySelectorAll('#star-rating input[name="rating"]');
   const ratingLabel = document.getElementById('rating-label');
   const ratingWords = { 1: 'Poor', 2: 'Fair', 3: 'Good', 4: 'Great', 5: 'Excellent' };
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const val = parseInt(star.dataset.value, 10);
-      ratingInput.value = val;
-      stars.forEach(s => {
-        if (parseInt(s.dataset.value, 10) <= val) {
-          s.classList.add('filled');
-          s.classList.remove('empty');
-        } else {
-          s.classList.add('empty');
-          s.classList.remove('filled');
-        }
-      });
-      ratingLabel.textContent = `${val} / 5 — ${ratingWords[val]}`;
+  const getRating = () => { const c = document.querySelector('#star-rating input[name="rating"]:checked'); return c ? parseInt(c.value, 10) : 0; };
+  const paintStars = () => {
+    const val = getRating();
+    stars.forEach(s => {
+      if (parseInt(s.dataset.value, 10) <= val) {
+        s.classList.add('filled');
+        s.classList.remove('empty');
+      } else {
+        s.classList.add('empty');
+        s.classList.remove('filled');
+      }
     });
-  });
+    if (val) ratingLabel.textContent = `${val} / 5 — ${ratingWords[val]}`;
+  };
+  ratingRadios.forEach(r => r.addEventListener('change', paintStars));
+  paintStars();
 
   // ─── Character counter + form-started event ───
   const textarea = document.getElementById('review-textarea');
@@ -640,15 +646,18 @@ the first review-placeholder card, then fill it in):
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (!ratingInput.value) {
+    if (!getRating()) {
       alert('Please select a star rating.');
+      document.getElementById('rating-1').focus();
       return;
     }
 
     // Validate required fields
     let valid = true;
     form.querySelectorAll('input[required], select[required], textarea[required]').forEach(input => {
-      if (input.type === 'checkbox') {
+      if (input.type === 'radio') {
+        // rating radios are validated above
+      } else if (input.type === 'checkbox') {
         if (!input.checked) { valid = false; input.classList.add('ring-2','ring-red-400'); }
         else input.classList.remove('ring-2','ring-red-400');
       } else if (!input.value.trim()) {
