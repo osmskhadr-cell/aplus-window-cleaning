@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/png" href="/assets/logo.png" />
-<link rel="apple-touch-icon" href="/assets/logo.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
 <title>Reviews | A+ Window Cleaning Minnesota | Minneapolis & St. Paul Testimonials</title>
 <meta name="description" content="Real reviews from Minnesota homeowners and businesses. A+ Window Cleaning — 5-star rated across Minneapolis, St. Paul & Twin Cities. Water fed pole technology. Streak-free guaranteed." />
 <meta name="keywords" content="A+ Window Cleaning reviews, window cleaner Minneapolis testimonials, window cleaning St Paul reviews, Twin Cities window cleaning reviews, best window cleaning company Minneapolis" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#0A1628" />
-<link rel="canonical" href="https://apluswindowcleaning.com/reviews.html" />
+<link rel="canonical" href="https://aplus-window-cleaning.vercel.app/reviews.html" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Reviews & Testimonials | A+ Window Cleaning Minnesota" />
 <meta property="og:description" content="Real reviews from Minnesota homeowners and business collaborators. Streak-free guaranteed, 5-star rated across the Twin Cities." />
-<meta property="og:url" content="https://apluswindowcleaning.com/reviews.html" />
-<meta property="og:image" content="/assets/logo.png" />
+<meta property="og:url" content="https://aplus-window-cleaning.vercel.app/reviews.html" />
+<meta property="og:image" content="https://aplus-window-cleaning.vercel.app/assets/logo.png" />
 
 <!--
 TODO: REPLACE PLACEHOLDER IMAGES
@@ -42,19 +43,12 @@ save into /assets/ folder with exact filenames below:
 <!-- Preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap" rel="stylesheet" />
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: { extend: {
-      colors: { navy: '#0A1628', 'navy-mid': '#152238', sky: '#4A9EFF', 'sky-light': '#D6EAFF', cream: '#FAF9F6', warm: '#F0F4F8', green: '#22C55E', 'text-muted': '#64748B' },
-      fontFamily: { serif: ['Fraunces', 'serif'], sans: ['"Cabinet Grotesk"', 'system-ui', 'sans-serif'] },
-    }},
-  };
-</script>
+<link rel="stylesheet" href="/assets/tailwind.css" />
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Cabinet Grotesk', system-ui, sans-serif; color: #0A1628; background: #FAF9F6; -webkit-font-smoothing: antialiased; }
@@ -80,6 +74,7 @@ save into /assets/ folder with exact filenames below:
   .star-select:hover { transform: scale(1.1); }
   .star-select.filled { color: #4A9EFF; }
   .star-select.empty { color: #E2E8F0; }
+  .star-radio:focus-visible + .star-select { outline: 2px solid #4A9EFF; outline-offset: 2px; border-radius: 0.5rem; }
 
   /* Mobile menu */
   .mobile-menu-closed { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
@@ -129,7 +124,7 @@ save into /assets/ folder with exact filenames below:
 <nav id="nav" class="fixed top-0 left-0 right-0 z-50 h-[64px] md:h-16">
   <div class="max-w-7xl mx-auto px-4 md:px-8 h-full flex items-center justify-between">
     <a href="/index.html" class="flex items-center" aria-label="A+ Window Cleaning Minnesota home">
-      <img src="/assets/logo.png" alt="A+ Window Cleaning Minnesota" class="h-12 md:h-14 w-auto object-contain" loading="eager" style="filter: brightness(0) invert(1);" />
+      <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning Minnesota" class="h-12 md:h-14 w-auto object-contain" loading="eager" style="filter: brightness(0) invert(1);" />
     </a>
     <div class="hidden md:flex items-center gap-7 text-sm font-medium text-white/85">
       <a href="services.html" class="hover:text-white transition">Services</a>
@@ -161,9 +156,9 @@ save into /assets/ folder with exact filenames below:
   <div class="absolute inset-0 hero-grid opacity-60"></div>
   <div class="absolute inset-0 hero-glow"></div>
   <div class="relative max-w-5xl mx-auto px-4 md:px-8 text-center w-full">
-    <div class="reveal text-sky text-xs font-bold uppercase tracking-[0.18em] mb-3">Testimonials</div>
-    <h1 class="reveal hero-h1 font-serif font-black text-3xl md:text-5xl leading-tight mb-5">Reviews from Minnesota Clients & Collaborators</h1>
-    <p class="reveal text-sm md:text-xl text-white/80 md:text-white/75 max-w-2xl mx-auto px-4">Honest feedback from across the Twin Cities. No scripts, no incentives.</p>
+    <div class="text-sky text-xs font-bold uppercase tracking-[0.18em] mb-3">Testimonials</div>
+    <h1 class="hero-h1 font-serif font-black text-3xl md:text-5xl leading-tight mb-5">Reviews from Minnesota Clients & Collaborators</h1>
+    <p class="text-sm md:text-xl text-white/80 md:text-white/75 max-w-2xl mx-auto px-4">Honest feedback from across the Twin Cities. No scripts, no incentives.</p>
   </div>
 </section>
 
@@ -234,11 +229,11 @@ DATA-TYPE values:
   Homeowner → data-type="client"
   Business → data-type="client"
   Collaborator → data-type="collaborator"
-════════════════════════════════════
--->
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" id="reviews-grid">
-
+REVIEW CARD TEMPLATE (copy everything between the
+dashed lines, paste it inside #reviews-grid BEFORE
+the first review-placeholder card, then fill it in):
+- - - - - - - - - - - - - - - - - - -
       <div class="review-card bg-white rounded-2xl shadow-md p-6 border border-gray-100"
            data-type="client">
         <div class="flex gap-1 text-yellow-400 text-lg mb-3">★★★★★</div>
@@ -250,6 +245,12 @@ DATA-TYPE values:
           <p class="text-sm text-gray-500">Homeowner · Minneapolis, MN</p>
         </div>
       </div>
+- - - - - - - - - - - - - - - - - - -
+════════════════════════════════════
+-->
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" id="reviews-grid">
+
       <div class="review-card review-placeholder bg-white rounded-2xl shadow-md p-7 border-2 border-dashed border-sky opacity-60" data-type="client">
         <div class="stars text-yellow-400 text-lg mb-3">★★★★★</div>
         <blockquote class="text-gray-700 leading-relaxed mb-4 italic">"Your review could be here. We're collecting our first testimonials from real clients and collaborators."</blockquote>
@@ -337,18 +338,22 @@ DATA-TYPE values:
         </div>
 
         <!-- Row 4: Star Rating -->
-        <div class="mb-5">
-          <label class="block text-sm font-medium text-navy mb-2">Your Rating<span class="text-red-500">*</span></label>
-          <div class="flex flex-wrap items-center gap-1 text-4xl" id="star-rating">
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="1">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="2">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="3">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="4">★</span>
-            <span class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="5">★</span>
-            <span class="ml-3 text-sm text-text-muted self-center" id="rating-label">Click to rate</span>
+        <fieldset class="mb-5" id="star-rating">
+          <legend class="block text-sm font-medium text-navy mb-2">Your Rating<span class="text-red-500">*</span></legend>
+          <div class="flex flex-wrap items-center gap-1 text-4xl">
+            <input type="radio" name="rating" value="1" id="rating-1" class="sr-only star-radio" required />
+            <label for="rating-1" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="1"><span aria-hidden="true">★</span><span class="sr-only">1 star</span></label>
+            <input type="radio" name="rating" value="2" id="rating-2" class="sr-only star-radio" required />
+            <label for="rating-2" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="2"><span aria-hidden="true">★</span><span class="sr-only">2 stars</span></label>
+            <input type="radio" name="rating" value="3" id="rating-3" class="sr-only star-radio" required />
+            <label for="rating-3" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="3"><span aria-hidden="true">★</span><span class="sr-only">3 stars</span></label>
+            <input type="radio" name="rating" value="4" id="rating-4" class="sr-only star-radio" required />
+            <label for="rating-4" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="4"><span aria-hidden="true">★</span><span class="sr-only">4 stars</span></label>
+            <input type="radio" name="rating" value="5" id="rating-5" class="sr-only star-radio" required />
+            <label for="rating-5" class="star-select empty inline-flex items-center justify-center min-w-[44px] min-h-[44px]" data-value="5"><span aria-hidden="true">★</span><span class="sr-only">5 stars</span></label>
+            <span class="ml-3 text-sm text-text-muted self-center" id="rating-label" aria-live="polite">Click to rate</span>
           </div>
-          <input type="hidden" name="rating" id="rating-input" required value="" />
-        </div>
+        </fieldset>
 
         <!-- Row 5: Review Text -->
         <div class="mb-5">
@@ -431,7 +436,7 @@ DATA-TYPE values:
     <div class="md:hidden py-8">
       <!-- Logo + tagline + stars + social (full width) -->
       <div class="col-span-2 mb-6">
-        <img src="/assets/logo.png" alt="A+ Window Cleaning" class="object-contain" style="filter:brightness(0) invert(1);width:110px;height:auto;max-width:110px;" />
+        <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning" class="object-contain" style="filter:brightness(0) invert(1);width:110px;height:auto;max-width:110px;" />
         <p class="text-sm text-gray-400 mt-2">Professional window cleaning for Minnesota homes and businesses.</p>
         <p class="text-sm text-yellow-400 mt-2">★★★★★ 5-Star Rated</p>
         <div class="flex gap-4 mt-3">
@@ -478,7 +483,7 @@ DATA-TYPE values:
     <div class="hidden md:grid md:grid-cols-3 gap-10 mb-10 text-center md:text-left">
       <div>
         <a href="/index.html" class="inline-block mb-3">
-          <img src="/assets/logo.png" alt="A+ Window Cleaning Minnesota" class="h-16 w-auto object-contain mx-auto md:mx-0" loading="lazy" style="filter: brightness(0) invert(1); opacity: 0.9;" />
+          <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning Minnesota" class="h-16 w-auto object-contain mx-auto md:mx-0" loading="lazy" style="filter: brightness(0) invert(1); opacity: 0.9;" />
         </a>
         <p class="text-sm text-white/60 leading-relaxed mb-4">Professional window cleaning for Minnesota homes and businesses. Streak-free, insured, and same-week available.</p>
         <div class="text-yellow-300 mb-1">★★★★★</div>
@@ -591,26 +596,27 @@ DATA-TYPE values:
   });
 
   // ─── Star rating ───
+  // Five real radio inputs (name="rating", values 1-5) styled as stars; keyboard and screen readers work natively.
   const stars = document.querySelectorAll('#star-rating .star-select');
-  const ratingInput = document.getElementById('rating-input');
+  const ratingRadios = document.querySelectorAll('#star-rating input[name="rating"]');
   const ratingLabel = document.getElementById('rating-label');
   const ratingWords = { 1: 'Poor', 2: 'Fair', 3: 'Good', 4: 'Great', 5: 'Excellent' };
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const val = parseInt(star.dataset.value, 10);
-      ratingInput.value = val;
-      stars.forEach(s => {
-        if (parseInt(s.dataset.value, 10) <= val) {
-          s.classList.add('filled');
-          s.classList.remove('empty');
-        } else {
-          s.classList.add('empty');
-          s.classList.remove('filled');
-        }
-      });
-      ratingLabel.textContent = `${val} / 5 — ${ratingWords[val]}`;
+  const getRating = () => { const c = document.querySelector('#star-rating input[name="rating"]:checked'); return c ? parseInt(c.value, 10) : 0; };
+  const paintStars = () => {
+    const val = getRating();
+    stars.forEach(s => {
+      if (parseInt(s.dataset.value, 10) <= val) {
+        s.classList.add('filled');
+        s.classList.remove('empty');
+      } else {
+        s.classList.add('empty');
+        s.classList.remove('filled');
+      }
     });
-  });
+    if (val) ratingLabel.textContent = `${val} / 5 — ${ratingWords[val]}`;
+  };
+  ratingRadios.forEach(r => r.addEventListener('change', paintStars));
+  paintStars();
 
   // ─── Character counter + form-started event ───
   const textarea = document.getElementById('review-textarea');
@@ -634,15 +640,18 @@ DATA-TYPE values:
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (!ratingInput.value) {
+    if (!getRating()) {
       alert('Please select a star rating.');
+      document.getElementById('rating-1').focus();
       return;
     }
 
     // Validate required fields
     let valid = true;
     form.querySelectorAll('input[required], select[required], textarea[required]').forEach(input => {
-      if (input.type === 'checkbox') {
+      if (input.type === 'radio') {
+        // rating radios are validated above
+      } else if (input.type === 'checkbox') {
         if (!input.checked) { valid = false; input.classList.add('ring-2','ring-red-400'); }
         else input.classList.remove('ring-2','ring-red-400');
       } else if (!input.value.trim()) {

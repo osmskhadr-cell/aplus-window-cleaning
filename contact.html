@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/png" href="/assets/logo.png" />
-<link rel="apple-touch-icon" href="/assets/logo.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
 <title>Contact A+ Window Cleaning Minnesota | (612) 369-1867 | Free Quote Minneapolis</title>
 <meta name="description" content="Contact A+ Window Cleaning in Minnesota. Call (612) 369-1867 or get a free quote online. Serving Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove & Twin Cities. Same-week booking." />
 <meta name="keywords" content="contact window cleaner Minneapolis, window cleaning quote St Paul, window cleaning Minnesota phone, same week window cleaning Twin Cities, A+ Window Cleaning contact" />
-<link rel="canonical" href="https://apluswindowcleaning.com/contact.html" />
+<link rel="canonical" href="https://aplus-window-cleaning.vercel.app/contact.html" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Contact A+ Window Cleaning Minnesota | (612) 369-1867" />
 <meta property="og:description" content="Call (612) 369-1867 or get a free quote in 60 seconds. Serving Minneapolis, St. Paul & Twin Cities." />
-<meta property="og:url" content="https://apluswindowcleaning.com/contact.html" />
-<meta property="og:image" content="/assets/logo.png" />
+<meta property="og:url" content="https://aplus-window-cleaning.vercel.app/contact.html" />
+<meta property="og:image" content="https://aplus-window-cleaning.vercel.app/assets/logo.png" />
 
 <!--
 TODO: REPLACE PLACEHOLDER IMAGES
@@ -40,19 +41,12 @@ save into /assets/ folder with exact filenames below:
 <!-- Preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap" rel="stylesheet" />
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: { extend: {
-      colors: { navy: '#0A1628', 'navy-mid': '#152238', sky: '#4A9EFF', 'sky-light': '#D6EAFF', cream: '#FAF9F6', warm: '#F0F4F8', green: '#22C55E', 'text-muted': '#64748B' },
-      fontFamily: { serif: ['Fraunces', 'serif'], sans: ['"Cabinet Grotesk"', 'system-ui', 'sans-serif'] },
-    }},
-  };
-</script>
+<link rel="stylesheet" href="/assets/tailwind.css" />
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Cabinet Grotesk', system-ui, sans-serif; color: #0A1628; background: #FAF9F6; -webkit-font-smoothing: antialiased; }
@@ -142,7 +136,7 @@ save into /assets/ folder with exact filenames below:
 <nav id="nav" class="fixed top-0 left-0 right-0 z-50 h-[64px] md:h-16">
   <div class="max-w-7xl mx-auto px-4 md:px-8 h-full flex items-center justify-between">
     <a href="/index.html" class="flex items-center" aria-label="A+ Window Cleaning Minnesota home">
-      <img src="/assets/logo.png" alt="A+ Window Cleaning Minnesota" class="h-12 md:h-14 w-auto object-contain" loading="eager" style="filter: brightness(0) invert(1);" />
+      <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning Minnesota" class="h-12 md:h-14 w-auto object-contain" loading="eager" style="filter: brightness(0) invert(1);" />
     </a>
     <div class="hidden md:flex items-center gap-7 text-sm font-medium text-white/85">
       <a href="services.html" class="hover:text-white transition">Services</a>
@@ -174,9 +168,9 @@ save into /assets/ folder with exact filenames below:
   <div class="absolute inset-0 hero-grid opacity-60" style="z-index:2;"></div>
   <div class="absolute inset-0 hero-glow" style="z-index:3;"></div>
   <div class="relative max-w-5xl mx-auto px-4 md:px-8 text-center w-full" style="z-index:10;">
-    <div class="reveal inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-3">Contact</div>
-    <h1 class="reveal hero-h1 font-serif font-black text-3xl md:text-5xl leading-tight mb-5">Let's Get Your Minnesota Windows Cleaned</h1>
-    <p class="reveal text-sm md:text-xl text-white/80 md:text-white/75 max-w-2xl mx-auto px-4">Serving Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove & the Twin Cities. Call, text, or fill out the form — we respond within 2 hours.</p>
+    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-3">Contact</div>
+    <h1 class="hero-h1 font-serif font-black text-3xl md:text-5xl leading-tight mb-5">Let's Get Your Minnesota Windows Cleaned</h1>
+    <p class="text-sm md:text-xl text-white/80 md:text-white/75 max-w-2xl mx-auto px-4">Serving Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove & the Twin Cities. Call, text, or fill out the form — we respond within 2 hours.</p>
   </div>
 </section>
 
@@ -381,6 +375,11 @@ save into /assets/ folder with exact filenames below:
               </button>
               <button type="submit" class="btn-green py-4 rounded-xl font-semibold flex items-center justify-center gap-2">Send My Free Quote</button>
             </div>
+            <div id="quote-error" class="hidden mb-3 rounded-xl border border-red-300 bg-red-50 text-navy p-4 text-sm" role="alert" aria-live="assertive">
+              <p class="font-semibold mb-1">Sorry, your request didn't go through.</p>
+              <p class="text-text-muted mb-3">Please try again, or call or text us at <a href="tel:+16123691867" class="font-semibold text-navy underline whitespace-nowrap">(612) 369-1867</a>.</p>
+              <button type="button" id="quote-retry" class="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm">Try again</button>
+            </div>
             <p class="text-xs text-text-muted text-center">We respond within 2 hours. No spam, ever.</p>
           </div>
 
@@ -409,7 +408,7 @@ save into /assets/ folder with exact filenames below:
     <div class="md:hidden py-8">
       <!-- Logo + tagline + stars + social (full width) -->
       <div class="col-span-2 mb-6">
-        <img src="/assets/logo.png" alt="A+ Window Cleaning" class="object-contain" style="filter:brightness(0) invert(1);width:110px;height:auto;max-width:110px;" />
+        <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning" class="object-contain" style="filter:brightness(0) invert(1);width:110px;height:auto;max-width:110px;" />
         <p class="text-sm text-gray-400 mt-2">Professional window cleaning for Minnesota homes and businesses.</p>
         <p class="text-sm text-yellow-400 mt-2">★★★★★ 5-Star Rated</p>
         <div class="flex gap-4 mt-3">
@@ -456,7 +455,7 @@ save into /assets/ folder with exact filenames below:
     <div class="hidden md:grid md:grid-cols-3 gap-10 mb-10 text-center md:text-left">
       <div>
         <a href="/index.html" class="inline-block mb-3">
-          <img src="/assets/logo.png" alt="A+ Window Cleaning Minnesota" class="h-16 w-auto object-contain mx-auto md:mx-0" loading="lazy" style="filter: brightness(0) invert(1); opacity: 0.9;" />
+          <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning Minnesota" class="h-16 w-auto object-contain mx-auto md:mx-0" loading="lazy" style="filter: brightness(0) invert(1); opacity: 0.9;" />
         </a>
         <p class="text-sm text-white/60 leading-relaxed mb-4">Professional window cleaning for Minnesota homes and businesses. Streak-free, insured, and same-week available.</p>
         <div class="text-yellow-300 mb-1">★★★★★</div>
@@ -615,35 +614,46 @@ save into /assets/ folder with exact filenames below:
     });
     if (!valid) return;
 
+    // Submit via Formspree
     const endpoint = form.getAttribute('action');
     const data = new FormData(form);
-    fetch(endpoint, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(() => showStep('success'))
-      .catch(() => { sendMailto(data); showStep('success'); });
-    document.getElementById('progress-dots').style.display = 'none';
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const errorBox = document.getElementById('quote-error');
+    const setSending = (on) => {
+      submitBtn.disabled = on;
+      submitBtn.setAttribute('aria-busy', on ? 'true' : 'false');
+      submitBtn.classList.toggle('opacity-60', on);
+      submitBtn.classList.toggle('cursor-wait', on);
+    };
+    const showError = () => {
+      setSending(false);
+      errorBox.classList.remove('hidden');
+      document.getElementById('quote-retry').focus();
+    };
+
+    errorBox.classList.add('hidden');
+    setSending(true);
+
+    fetch(endpoint, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(res => {
+      if (!res.ok) { showError(); return; }
+      setSending(false);
+      document.getElementById('progress-dots').style.display = 'none';
+      showStep('success');
+    }).catch(showError);
   });
 
-  function sendMailto(data) {
-    const obj = {}; data.forEach((v, k) => { obj[k] = v; });
-    const body = encodeURIComponent(
-`New quote request from A+ Window Cleaning website:
+  // Retry: hide the error, re-enable submit and resend the same data
+  document.getElementById('quote-retry').addEventListener('click', () => {
+    document.getElementById('quote-error').classList.add('hidden');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = false;
+    form.requestSubmit(submitBtn);
+  });
 
-Name: ${obj.first_name || ''} ${obj.last_name || ''}
-Email: ${obj.email || ''}
-Phone: ${obj.phone || ''}
-ZIP: ${obj.zip || ''}
-Text me instead: ${obj.text_me ? 'Yes' : 'No'}
-
-Property type: ${obj.property_type || ''}
-Frequency: ${obj.frequency || ''}
-Exterior windows: ${obj.exterior_count || 0}
-Interior + Exterior windows: ${obj.both_count || 0}
-Screens & tracks: ${obj.screens_count || 0}
-
-Estimated price: ${obj.price_estimate || ''}
-`);
-    window.location.href = `mailto:Apluswindowc@gmail.com?subject=${encodeURIComponent('New Quote Request — A+ Window Cleaning')}&body=${body}`;
-  }
 })();
 </script>
 </body>
