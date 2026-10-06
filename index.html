@@ -969,6 +969,11 @@
                   Send My Free Quote
                 </button>
               </div>
+              <div id="quote-error" class="hidden mb-3 rounded-xl border border-red-300 bg-red-50 text-navy p-4 text-sm" role="alert" aria-live="assertive">
+                <p class="font-semibold mb-1">Sorry, your request didn't go through.</p>
+                <p class="text-text-muted mb-3">Please try again, or call or text us at <a href="tel:+16123691867" class="font-semibold text-navy underline whitespace-nowrap">(612) 369-1867</a>.</p>
+                <button type="button" id="quote-retry" class="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm">Try again</button>
+              </div>
               <p class="text-xs text-text-muted text-center">We respond within 2 hours. No spam, ever.</p>
             </div>
 
@@ -1467,45 +1472,42 @@
     // Submit via Formspree
     const endpoint = form.getAttribute('action');
     const data = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const errorBox = document.getElementById('quote-error');
+    const setSending = (on) => {
+      submitBtn.disabled = on;
+      submitBtn.setAttribute('aria-busy', on ? 'true' : 'false');
+      submitBtn.classList.toggle('opacity-60', on);
+      submitBtn.classList.toggle('cursor-wait', on);
+    };
+    const showError = () => {
+      setSending(false);
+      errorBox.classList.remove('hidden');
+      document.getElementById('quote-retry').focus();
+    };
+
+    errorBox.classList.add('hidden');
+    setSending(true);
 
     fetch(endpoint, {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
     }).then(res => {
+      if (!res.ok) { showError(); return; }
+      setSending(false);
+      document.getElementById('progress-dots').style.display = 'none';
       showStep('success');
-    }).catch(() => {
-      // Fallback to mailto
-      sendMailto(data);
-      showStep('success');
-    });
-
-    // hide progress dots on success
-    document.getElementById('progress-dots').style.display = 'none';
+    }).catch(showError);
   });
 
-  function sendMailto(data) {
-    const obj = {};
-    data.forEach((v, k) => { obj[k] = v; });
-    const body = encodeURIComponent(
-`New quote request from A+ Window Cleaning website:
-
-Name: ${obj.first_name || ''} ${obj.last_name || ''}
-Email: ${obj.email || ''}
-Phone: ${obj.phone || ''}
-ZIP: ${obj.zip || ''}
-Text me instead: ${obj.text_me ? 'Yes' : 'No'}
-
-Property type: ${obj.property_type || ''}
-Frequency: ${obj.frequency || ''}
-Exterior windows: ${obj.exterior_count || 0}
-Interior + Exterior windows: ${obj.both_count || 0}
-Screens & tracks: ${obj.screens_count || 0}
-
-Estimated price: ${obj.price_estimate || ''}
-`);
-    window.location.href = `mailto:Apluswindowc@gmail.com?subject=${encodeURIComponent('New Quote Request — A+ Window Cleaning')}&body=${body}`;
-  }
+  // Retry: hide the error, re-enable submit and resend the same data
+  document.getElementById('quote-retry').addEventListener('click', () => {
+    document.getElementById('quote-error').classList.add('hidden');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = false;
+    form.requestSubmit(submitBtn);
+  });
 
   // Smooth scroll for anchor links handled by CSS scroll-behavior
 })();
