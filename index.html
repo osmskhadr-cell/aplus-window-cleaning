@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/png" href="/assets/logo.png" />
-<link rel="apple-touch-icon" href="/assets/logo.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
 <title>A+ Window Cleaning Minnesota | Water Fed Pole | Minneapolis & St. Paul | Free Quote</title>
 <meta name="description" content="Minnesota's #1 owner-operated window cleaning service. Water fed pole + RODI pure water technology. Residential & commercial. Serving Minneapolis, St. Paul & Twin Cities. Free quote in 60 seconds. Same-week booking. Fully insured." />
 <meta name="keywords" content="window cleaning Minneapolis, window cleaning St Paul, window cleaning Minnesota, residential window cleaning Twin Cities, commercial window washing Minneapolis, water fed pole Minnesota, RODI window cleaning, streak-free window cleaning, same week window cleaning Minnesota" />
@@ -26,34 +27,13 @@
 <!-- Preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap" rel="stylesheet" />
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
 
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: '#0A1628',
-          'navy-mid': '#152238',
-          sky: '#4A9EFF',
-          'sky-light': '#D6EAFF',
-          cream: '#FAF9F6',
-          warm: '#F0F4F8',
-          green: '#22C55E',
-          'text-muted': '#64748B',
-        },
-        fontFamily: {
-          serif: ['Fraunces', 'serif'],
-          sans: ['"Cabinet Grotesk"', 'system-ui', 'sans-serif'],
-        },
-      },
-    },
-  };
-</script>
+<!-- Tailwind (static build, see CLAUDE.md) -->
+<link rel="stylesheet" href="/assets/tailwind.css" />
 
 <style>
   html { scroll-behavior: smooth; }
@@ -380,7 +360,7 @@
 <nav id="nav" class="fixed top-0 left-0 right-0 z-50 h-[64px] md:h-16">
   <div class="max-w-7xl mx-auto px-4 md:px-8 h-full flex items-center justify-between">
     <a href="/index.html" class="flex items-center" aria-label="A+ Window Cleaning Minnesota home">
-      <img src="/assets/logo.png" alt="A+ Window Cleaning Minnesota" class="h-12 md:h-14 w-auto object-contain" loading="eager" style="filter: brightness(0) invert(1);" />
+      <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning Minnesota" class="h-12 md:h-14 w-auto object-contain" loading="eager" style="filter: brightness(0) invert(1);" />
     </a>
     <div class="hidden md:flex items-center gap-7 text-sm font-medium text-white/85">
       <a href="services.html" class="hover:text-white transition">Services</a>
@@ -409,12 +389,18 @@
 
 <!-- ════════════ 02 HERO ════════════ -->
 <section class="hero-section relative min-h-[100svh] bg-navy text-white overflow-hidden flex items-center pt-16 pb-16 md:pb-0">
-  <img
-    class="hero-bg-video absolute inset-0 w-full h-full object-cover"
-    src="/assets/hero-image.jpg?v=2"
-    alt=""
-    style="z-index:0;"
-  />
+  <picture>
+    <source type="image/webp" srcset="/assets/hero-image-960.webp 960w, /assets/hero-image-1920.webp 1920w" sizes="100vw" />
+    <img
+      class="hero-bg-video absolute inset-0 w-full h-full object-cover"
+      src="/assets/hero-image.jpg?v=3"
+      width="1920" height="1277"
+      fetchpriority="high"
+      decoding="async"
+      alt=""
+      style="z-index:0;"
+    />
+  </picture>
   <div class="hero-overlay absolute inset-0" style="background:rgba(10,22,40,0.60);z-index:1;"></div>
   <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,22,40,0.35) 0%,rgba(74,158,255,0.06) 50%,rgba(10,22,40,0.45) 100%);z-index:2;"></div>
   <div class="hero-bottom-gradient absolute bottom-0 left-0 right-0 h-32" style="background:linear-gradient(to bottom,transparent,rgba(10,22,40,0.85));z-index:3;"></div>
@@ -425,18 +411,18 @@
     <!-- Left -->
     <div class="lg:col-span-7 min-w-0">
 
-      <div class="reveal inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-6 md:mb-7 max-w-full overflow-hidden">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium mb-6 md:mb-7 max-w-full overflow-hidden">
         <span class="text-yellow-300 flex-shrink-0">★</span><span class="truncate">5-Star Rated · Minnesota's Trusted Window Cleaner</span>
       </div>
-      <h1 class="reveal hero-h1 font-serif font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[1.02] tracking-tight mb-6">
+      <h1 class="hero-h1 font-serif font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[1.02] tracking-tight mb-6">
         Crystal Clear Windows.<br />
         <span class="text-sky">Zero Hassle.</span><br />
         Guaranteed.
       </h1>
-      <p class="hero-subtext reveal text-base md:text-xl text-white/80 md:text-white/75 max-w-[85%] md:max-w-2xl leading-relaxed mb-8">
+      <p class="hero-subtext text-base md:text-xl text-white/80 md:text-white/75 max-w-[85%] md:max-w-2xl leading-relaxed mb-8">
         Professional residential and commercial window cleaning across Minneapolis, St. Paul and the Twin Cities. Water fed pole with RODI pure water — insured, eco-friendly, streak-free or we come back for free.
       </p>
-      <div class="hero-ctas reveal flex gap-3 mb-4">
+      <div class="hero-ctas flex gap-3 mb-4">
         <a href="#quote-form" class="hero-cta-primary btn-primary flex-1 sm:flex-none sm:w-auto px-5 sm:px-7 py-3.5 sm:py-4 rounded-full font-semibold text-sm sm:text-base inline-flex items-center justify-center gap-2 min-h-[44px]">
           Get My Free Quote
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>
@@ -471,7 +457,7 @@
       </div>
 
       <!-- Trust bar -->
-      <div class="hero-trust reveal grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mt-6 pb-4">
+      <div class="hero-trust grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mt-6 pb-4">
         <div class="flex items-center gap-2 text-sm text-white/80"><span class="text-green">✓</span> Fully Insured</div>
         <div class="flex items-center gap-2 text-sm text-white/80"><span class="text-green">✓</span> Screens Included</div>
         <div class="flex items-center gap-2 text-sm text-white/80"><span class="text-green">✓</span> Eco-Friendly</div>
@@ -482,17 +468,17 @@
     <!-- Right: floating cards (desktop only — hidden on mobile per spec) -->
     <div class="hidden lg:block lg:col-span-5 relative">
       <div class="relative h-[520px]">
-        <div class="reveal absolute top-0 right-0 bg-white/10 border border-white/15 backdrop-blur-md rounded-2xl p-6 w-72 shadow-2xl">
+        <div class="absolute top-0 right-0 bg-white/10 border border-white/15 backdrop-blur-md rounded-2xl p-6 w-72 shadow-2xl">
           <div class="text-4xl font-serif font-black text-white mb-1">200+</div>
           <div class="text-white/70 text-sm">Happy Minnesota Homes</div>
           <div class="flex gap-1 mt-3 text-yellow-300">★★★★★</div>
         </div>
-        <div class="reveal absolute top-44 left-0 bg-sky text-navy rounded-2xl p-6 w-72 shadow-2xl">
+        <div class="absolute top-44 left-0 bg-sky text-navy rounded-2xl p-6 w-72 shadow-2xl">
           <div class="text-sm font-semibold opacity-80 mb-1">Typical Job</div>
           <div class="text-3xl font-serif font-black mb-1">$150–$350</div>
           <div class="text-sm opacity-80">All-inclusive pricing</div>
         </div>
-        <div class="reveal absolute bottom-0 right-4 bg-white text-navy rounded-2xl p-6 w-72 shadow-2xl">
+        <div class="absolute bottom-0 right-4 bg-white text-navy rounded-2xl p-6 w-72 shadow-2xl">
           <div class="flex items-center gap-2 mb-2">
             <span class="w-2.5 h-2.5 rounded-full bg-green animate-pulse"></span>
             <span class="text-xs font-semibold uppercase tracking-wider text-green">Available Now</span>
@@ -1165,7 +1151,7 @@
     <div class="md:hidden py-8">
       <!-- Logo + tagline + stars + social (full width) -->
       <div class="col-span-2 mb-6">
-        <img src="/assets/logo.png" alt="A+ Window Cleaning" class="object-contain" style="filter:brightness(0) invert(1);width:110px;height:auto;max-width:110px;" />
+        <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning" class="object-contain" style="filter:brightness(0) invert(1);width:110px;height:auto;max-width:110px;" />
         <p class="text-sm text-gray-400 mt-2">Professional window cleaning for Minnesota homes and businesses.</p>
         <p class="text-sm text-yellow-400 mt-2">★★★★★ 5-Star Rated</p>
         <div class="flex gap-4 mt-3">
@@ -1217,7 +1203,7 @@
         <div class="col-span-2 md:col-span-1">
           <a href="/index.html" class="inline-block mb-3">
             <div class="max-w-[180px]">
-              <img src="/assets/logo.png" alt="A+ Window Cleaning Minnesota" class="h-10 w-auto object-contain" loading="lazy" style="filter: brightness(0) invert(1);" />
+              <img src="/assets/logo-200.png" width="200" height="200" alt="A+ Window Cleaning Minnesota" class="h-10 w-auto object-contain" loading="lazy" style="filter: brightness(0) invert(1);" />
             </div>
           </a>
           <p class="text-sm text-gray-400 mb-2 max-w-xs">Professional window cleaning for Minnesota homes and businesses. Streak-free, insured, and same-week available.</p>
