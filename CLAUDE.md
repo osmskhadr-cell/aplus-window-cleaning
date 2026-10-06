@@ -4,6 +4,12 @@ Client site for A+ Window Cleaning (Minneapolis / St. Paul, MN), built and maint
 Live: https://aplus-window-cleaning.vercel.app/ (Vercel project `aplus-window-cleaning`, team `osmskhadr-cells-projects`).
 Repo: `osmskhadr-cell/aplus-window-cleaning`, branch `main`.
 
+## Rules
+- Never push to `main` directly; one branch per wave, Vercel preview, Omar reviews, then merge.
+- Forms (quote wizard, review form) and the Formspree endpoints are off limits unless Omar says so; never submit a real form, test with mocked requests only.
+- Never change client copy claims, prices or numbers without Omar's approval.
+- One agent per repo while a wave is open. Notes live only in CLAUDE.md: it is the single source of truth for this repo (no AGENTS.md or other notes files).
+
 ## Stack
 
 - 9 static HTML pages: `index.html`, `services.html`, `about.html`, `blog.html`, `contact.html`, `reviews.html`, `blog/cost-guide.html`, `blog/hard-water-stains.html`, `blog/seasonal-timing.html`. No framework, no build step for the HTML.
